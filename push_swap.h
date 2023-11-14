@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:22:11 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/14 16:32:12 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:25:58 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void	rr(t_stack *stack);
 void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
+int		ft_creat_stack(unsigned int size, char *argv[], t_stack *stack);
+void	ft_printf_a_b(t_stack *stack);
 
 #endif

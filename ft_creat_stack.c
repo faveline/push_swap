@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_creat_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 15:02:53 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/14 18:09:57 by faveline         ###   ########.fr       */
+/*   Created: 2023/11/14 16:47:25 by faveline          #+#    #+#             */
+/*   Updated: 2023/11/14 18:02:27 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int	ft_creat_stack(unsigned int size, char *argv[], t_stack *stack)
 {
-	t_stack	stack;
+	unsigned int	i;
 
-	if (argc <= 2)
-		return (0);
-	if (ft_creat_stack((unsigned int)argc, argv, &stack) < 0)
+	stack->a = (int *)malloc(size * sizeof(int));
+	if (stack->a == NULL)
+		return (-1);
+	stack->b = (int *)malloc(size * sizeof(int));
+	if (stack->b == NULL)
+		return (-1);
+	i = 1;
+	while (i < size)
 	{
-		ft_printf("ERROR\n");
-		return (1);
+		stack->a[i - 1] = ft_atoi(argv[i]);
+		i++;
 	}
-	ft_printf_a_b(&stack);
-	return (0);
+	stack->a[i - 1] = '\0';
+	stack->b[0] = '\0';
+	return (1);
 }

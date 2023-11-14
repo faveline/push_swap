@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 15:02:53 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/14 18:09:57 by faveline         ###   ########.fr       */
+/*   Created: 2023/11/14 17:15:09 by faveline          #+#    #+#             */
+/*   Updated: 2023/11/14 17:26:57 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	ft_printf_a_b(t_stack *stack)
 {
-	t_stack	stack;
+	unsigned int	i;
 
-	if (argc <= 2)
-		return (0);
-	if (ft_creat_stack((unsigned int)argc, argv, &stack) < 0)
+	i = 0;
+	while (stack->a[i])
 	{
-		ft_printf("ERROR\n");
-		return (1);
+		ft_printf("%d\n", stack->a[i]);
+		i++;
 	}
-	ft_printf_a_b(&stack);
-	return (0);
+	ft_printf("***\n");
+	i = 0;
+	while (stack->b[i])
+	{
+		ft_printf("%d\n", stack->b[i]);
+		i++;
+	}
 }

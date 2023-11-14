@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 15:02:53 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/14 18:09:57 by faveline         ###   ########.fr       */
+/*   Created: 2023/11/14 18:10:16 by faveline          #+#    #+#             */
+/*   Updated: 2023/11/14 18:14:05 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int	ft_check_stack(int argc, char *argv[])
 {
-	t_stack	stack;
+	int	i;
+	int	j;
+	int	nbr;
 
-	if (argc <= 2)
-		return (0);
-	if (ft_creat_stack((unsigned int)argc, argv, &stack) < 0)
+	i = 1;
+	while (i < size)
 	{
-		ft_printf("ERROR\n");
-		return (1);
+		j = 0;
+		nbr = ft_atoi(argv[i]);
+		while (argv[i][j])
+		{
+			if (argv[i][j] !=
+		
+		}
+		i++;
 	}
-	ft_printf_a_b(&stack);
-	return (0);
+
 }
