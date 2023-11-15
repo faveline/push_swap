@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:22:11 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/14 17:25:58 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:37:18 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 typedef struct s_stack
 {
-	int	*a;
-	int	*b;
+	int				*a;
+	int				*b;
+	unsigned int	size;
 }		t_stack;
 
 void	sa(t_stack *stack);
@@ -33,6 +34,8 @@ void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
 int		ft_creat_stack(unsigned int size, char *argv[], t_stack *stack);
+int		ft_check_stack(unsigned int size, char *argv[]);
 void	ft_printf_a_b(t_stack *stack);
+void	ft_delete(t_stack *stack);
 
 #endif
