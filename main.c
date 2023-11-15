@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:02:53 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/15 10:52:50 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:38:20 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char *argv[])
 		ft_printf("ERROR\n");
 		return (1);
 	}
+	ft_sort_stack(&stack, stack.size);
 	ft_printf_a_b(&stack);
 	ft_delete(&stack);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:51:29 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/14 16:15:32 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:51:53 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	pa(t_stack *stack)
 		i++;
 	}
 	stack->a[0] = stack->b[0];
-	stack->a[i] = '\0';
+//	stack->a[i - 1] = '\0';
 	i = 0;
 	while (stack->b[i + 1])
 	{
@@ -93,7 +93,7 @@ void	pb(t_stack *stack)
 		i++;
 	}
 	stack->b[0] = stack->a[0];
-	stack->b[i] = '\0';
+//	stack->b[i] = '\0';
 	i = 0;
 	while (stack->a[i + 1])
 	{

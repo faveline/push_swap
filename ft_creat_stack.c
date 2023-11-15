@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:47:25 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/15 10:53:04 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:48:51 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	ft_creat_stack(unsigned int size, char *argv[], t_stack *stack)
 		i++;
 	}
 	stack->a[i - 1] = '\0';
+	stack->b[i - 1] = '\0';
 	stack->size = size - 1;
 	return (1);
 }
