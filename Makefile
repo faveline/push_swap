@@ -1,4 +1,4 @@
-NAME = push_swap.a
+NAME = push_swap
 
 SRCS = ft_creat_stack.c			\
 	   ft_ope_swap_push.c		\

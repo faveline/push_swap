@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:05:54 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/15 16:25:49 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:21:58 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,44 +67,43 @@ static int	ft_where_min(int *a, int size)
 	else
 		return (-1);
 }
-/*
-void	ft_sort_stack(t_stack *stack)
-{
-	int	*a;
-	int	*b;
-	int	i;
-	int	size;
 
-	size = stack->size;
-	a = stack->a;
-	b = stack->b;
-	while (size > 1)
-	{
-		i = 1;
-		while (i < size)
-		{
-			if (a[1] > a[0])
-			{
-				sa(stack);
-				ra(stack);
-			}
-			else
-			{
-				ra(stack);				
-			}
-			i++;
-		}
-		size --;
-		pb(stack);	
-	}
+static int	ft_max(int *a)
+{
+	int	i;
+	int	max;
+
 	i = 1;
-	while (i < stack->size)
+	max = a[0];
+	while (a[i])
 	{
-		pa(stack);
+		if (max < a[i])
+			max = a[i];
 		i++;
 	}
+	return (max);
 }
-*/
+
+static void	ft_min_max(t_stack *stack)
+{
+	int	i;
+	int	mid;
+
+	i = 0;
+	mid = (ft_min(stack->a) + ft_max(stack->a)) / 2;     //mid to improve
+	while (i < (int)stack->size)
+	{
+		if (stack->a[0] > mid)
+			ra(stack);
+		else		
+			pb(stack);
+		i++;
+	}
+	while (stack->b[0])
+		pa(stack);
+		
+}
+
 void	ft_sort_stack(t_stack *stack)
 {
 	int	*a;
@@ -115,10 +114,10 @@ void	ft_sort_stack(t_stack *stack)
 
 	size = stack->size;
 	a = stack->a;
+	ft_min_max(stack);
 	while (size > 1 && ft_is_stack_sort(a, size) < 0)
 	{
 		flag = ft_where_min(a, size);
-		i = 1;
 		min = ft_min(a);
 		while (flag != 0)
 		{
@@ -134,7 +133,6 @@ void	ft_sort_stack(t_stack *stack)
 				else
 					ra(stack);
 			}
-			i++;
 		}
 		size --;
 	}
