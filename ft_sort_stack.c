@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:05:54 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/15 15:49:38 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:25:49 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ void	ft_sort_stack(t_stack *stack)
 void	ft_sort_stack(t_stack *stack)
 {
 	int	*a;
-	int	*b;
 	int	i;
 	int	size;
 	int	min;
@@ -116,7 +115,6 @@ void	ft_sort_stack(t_stack *stack)
 
 	size = stack->size;
 	a = stack->a;
-	b = stack->b;
 	while (size > 1 && ft_is_stack_sort(a, size) < 0)
 	{
 		flag = ft_where_min(a, size);
@@ -141,7 +139,7 @@ void	ft_sort_stack(t_stack *stack)
 		size --;
 	}
 	i = size;
-	while (i < stack->size)
+	while (i < (int)stack->size)
 	{
 		pa(stack);
 		i++;
