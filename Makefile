@@ -10,7 +10,7 @@ SRCS = ft_creat_stack.c			\
 	   main.c
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address
 RM = rm -f
 AR = ar rcs
 
