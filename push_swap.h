@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:22:11 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/17 17:29:39 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/17 19:07:08 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ void	ft_median_inf(t_stack *stack, int denum, int nbr, t_med *median);
 int		ft_max_or_max_m(t_stack *stack, int max_m, int i, int preci);
 int		ft_is_it_sorted(t_stack *stack);
 int		ft_error_push_swap(int argc, char *argv[], t_stack *stack);
-
+void	ft_if_three(t_stack *stack);
+void	ft_if_five(t_stack *stack);
 #endif

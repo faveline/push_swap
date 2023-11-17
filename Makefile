@@ -9,6 +9,7 @@ SRCS = ft_creat_stack.c			\
 	   ft_check_stack.c			\
 	   ft_median.c				\
 	   ft_max.c					\
+	   ft_size_inf_five.c		\
 	   main.c
 
 CC = gcc
