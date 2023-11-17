@@ -5,8 +5,10 @@ SRCS = ft_creat_stack.c			\
 	   ft_ope_reverse.c			\
 	   ft_ope_rotate.c			\
 	   ft_sort_stack.c			\
-	   ft_utils.c				\
+	   ft_utils_push_swap.c		\
 	   ft_check_stack.c			\
+	   ft_median.c				\
+	   ft_max.c					\
 	   main.c
 
 CC = gcc

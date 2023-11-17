@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:39:07 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/14 16:26:22 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:33:46 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ra(t_stack *stack)
 
 	cpy = stack->a[0];
 	i = 0;
-	while (stack->a[i + 1])
+	while (i < stack->size_a - 1)
 	{
 		stack->a[i] = stack->a[i + 1];
 		i++;
@@ -35,7 +35,7 @@ void	rb(t_stack *stack)
 
 	cpy = stack->b[0];
 	i = 0;
-	while (stack->b[i + 1])
+	while (i < stack->size_b - 1)
 	{
 		stack->b[i] = stack->b[i + 1];
 		i++;
@@ -44,14 +44,14 @@ void	rb(t_stack *stack)
 	ft_printf("rb\n");
 }
 
-static void	rr_util(int *stack)
+static void	rr_util(int *stack, int size)
 {
 	int	i;
 	int	cpy;
 
 	cpy = stack[0];
 	i = 0;
-	while (stack[i + 1])
+	while (i < size - 1)
 	{
 		stack[i] = stack[i + 1];
 		i++;
@@ -61,7 +61,7 @@ static void	rr_util(int *stack)
 
 void	rr(t_stack *stack)
 {
-	rr_util(stack->a);
-	rr_util(stack->b);
+	rr_util(stack->a, stack->size_a);
+	rr_util(stack->b, stack->size_b);
 	ft_printf("rr\n");
 }

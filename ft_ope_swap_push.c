@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:51:29 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/15 11:51:53 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:38:29 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,26 +52,26 @@ void	pa(t_stack *stack)
 	int	cpy;
 	int	cpy2;
 
-	if (!stack->b[0])
+	if (stack->size_b == 0)
 		return ;
-	i = 1;
+	i = 0;
 	cpy = stack->a[0];
-	while (stack->a[i - 1])
+	stack->size_a++;
+	stack->size_b--;
+	while (++i < stack->size_a + 1)
 	{
 		cpy2 = stack->a[i];
 		stack->a[i] = cpy;
 		cpy = cpy2;
-		i++;
 	}
 	stack->a[0] = stack->b[0];
-//	stack->a[i - 1] = '\0';
 	i = 0;
-	while (stack->b[i + 1])
+	while (i < stack->size_b)
 	{
 		stack->b[i] = stack->b[i + 1];
 		i++;
 	}
-	stack->b[i] = '\0';
+	stack->b[i] = 0;
 	ft_printf("pa\n");
 }
 
@@ -81,25 +81,25 @@ void	pb(t_stack *stack)
 	int	cpy;
 	int	cpy2;
 
-	if (!stack->a[0])
+	if (stack->size_a == 0)
 		return ;
-	i = 1;
+	i = 0;
 	cpy = stack->b[0];
-	while (stack->b[i - 1])
+	stack->size_a--;
+	stack->size_b++;
+	while (++i < stack->size_b + 1)
 	{
 		cpy2 = stack->b[i];
 		stack->b[i] = cpy;
 		cpy = cpy2;
-		i++;
 	}
 	stack->b[0] = stack->a[0];
-//	stack->b[i] = '\0';
 	i = 0;
-	while (stack->a[i + 1])
+	while (i < stack->size_a)
 	{
 		stack->a[i] = stack->a[i + 1];
 		i++;
 	}
-	stack->a[i] = '\0';
+	stack->a[i] = 0;
 	ft_printf("pb\n");
 }

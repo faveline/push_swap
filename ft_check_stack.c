@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:10:16 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/15 10:26:03 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/17 09:27:22 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static long	ft_atoi_long(const char *str)
 	return (atoi * signe);
 }
 
-static int	ft_check_duplicate(int *tab, int nbr, unsigned int i)
+static int	ft_check_duplicate(int *tab, int nbr, int i)
 {
-	unsigned int	j;
+	int	j;
 
 	j = 0;
 	while (j < i)
@@ -67,12 +67,12 @@ static int	ft_comp_str(char *str1, char *str2)
 	return (1);
 }
 
-int	ft_check_stack(unsigned int argc, char *argv[])
+int	ft_check_stack(int argc, char *argv[])
 {
-	unsigned int	i;
-	int				nbr;
-	char			*check;
-	int				*tab_i;
+	int		i;
+	int		nbr;
+	char	*check;
+	int		*tab_i;
 
 	tab_i = (int *)malloc(argc * sizeof(int));
 	if (tab_i == NULL)
