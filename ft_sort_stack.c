@@ -33,27 +33,10 @@ static int	ft_sort_part(t_stack *stack, int size, t_med *median)
 
 	i = 0;
 	cpt = 0;
-	while (i < size && ft_no_value(stack, median->med_inf, median->med_sup) == 1)
+	while (i < size
+		&& ft_no_value(stack, median->med_inf, median->med_sup) == 1)
 	{
-		if (stack->a[0] >= median->med_sup_prev && stack->a[0] <= median->med_sup)
-		{
-			cpt++;
-			pb(stack);
-		}
-		else if (stack->a[0] <= median->med_inf_prev && stack->a[0] >= median->med_inf)
-		{	
-			cpt++;
-			pb(stack);
-			if (stack->a[0] <= median->med_inf || stack->a[0] >= median->med_sup)
-			{
-				i++;
-				rr(stack);
-			}
-			else
-				rb(stack);
-		}
-		else
-			ra(stack);
+		i = ft_if_sort_part(stack, median, i, &cpt);
 		i++;
 	}
 	return (cpt);
@@ -79,50 +62,16 @@ static void	ft_min_max(t_stack *stack, int denum)
 		pb(stack);
 }
 
-void	ft_sort_stack(t_stack *stack, int preci_denum, int preci_max)
+void	ft_sort_stack(t_stack *stack, int preci_denum, int preci_max, int size)
 {
-	int				size;
-	int				max;
-	int				flag;
-	int				flag2;
-	int				max_m;
+	t_max	flag;
 
-	size = stack->size;
 	ft_min_max(stack, preci_denum);
 	while (size > 0)
 	{
-		flag2 = 1;
-		max = ft_max(stack->b, stack->size_b);
-		max_m = ft_max_moins_un(stack->b, max, stack->size_b);
-		flag = ft_max_or_max_m(stack, max_m, size, preci_max);
-		while (flag != 0)
-		{
-			if (stack->b[0] == max && flag2 == 0)
-			{
-				flag = 0;
-				pa(stack);
-				sa(stack);
-			}
-			else if (stack->b[0] == max)
-			{
-				flag = 0;
-				pa(stack);
-			}
-			else if (stack->b[0] == max_m && flag2 == 1)
-			{
-				size--;
-				flag = ft_where_max(stack->b, size, stack->size_b);
-				flag2 = 0;
-				pa(stack);
-			}
-			else
-			{
-				if (flag == 1)
-					rrb(stack);
-				else
-					rb(stack);
-			}
-		}
+		flag = ft_ini_flag(stack, size, preci_max);
+		while (flag.flag != 0)
+			size = ft_if_sort(stack, size, &flag);
 		size --;
 	}
 }
