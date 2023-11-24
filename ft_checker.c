@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 10:09:19 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/24 11:03:07 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:54:32 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	if (ft_error_push_swap(argc, argv, &stack) == 1)
-		return (1);	
+		return (1);
 	ft_read_push(&stack);
 	ft_delete(&stack);
 	return (0);

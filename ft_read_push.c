@@ -6,13 +6,13 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 10:29:47 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/24 11:09:39 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:56:09 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_checker.h"
 
-static int ft_checker_stack(t_stack *stack)
+static int	ft_checker_stack(t_stack *stack)
 {
 	int	save;
 	int	i;
@@ -26,7 +26,7 @@ static int ft_checker_stack(t_stack *stack)
 		if (save > stack->a[i])
 			return (-1);
 		save = stack->a[i];
-		i++;	
+		i++;
 	}
 	return (1);
 }
@@ -66,7 +66,7 @@ void	ft_read_push(t_stack *stack)
 	{
 		ft_read_on_stack(stack, next_line);
 		free(next_line);
-		next_line = get_next_line(0);	
+		next_line = get_next_line(0);
 	}
 	if (ft_checker_stack(stack) < 0)
 		ft_printf("KO");

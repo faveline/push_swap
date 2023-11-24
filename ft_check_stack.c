@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:10:16 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/24 11:20:40 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:55:41 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ int	ft_check_stack(int argc, char *argv[])
 	tab_i = (int *)malloc(argc * sizeof(int));
 	if (tab_i == NULL)
 		return (-2);
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
 		if (argv[i][0] == '\0')
 			return (free(tab_i), -5);
@@ -92,8 +92,6 @@ int	ft_check_stack(int argc, char *argv[])
 		if (ft_comp_str(argv[i], check) < 0)
 			return (free(tab_i), free(check), -1);
 		free(check);
-		i++;
 	}
-	free(tab_i);
-	return (1);
+	return (free(tab_i), 1);
 }

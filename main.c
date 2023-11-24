@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:02:53 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/17 19:17:39 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:50:22 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ int	main(int argc, char *argv[])
 		ft_sort_stack(&stack, 8, 2, stack.size);
 	else if (stack.size > 5)
 		ft_sort_stack(&stack, 4, 2, stack.size);
-	else if (stack.size >= 2)
+	else if (stack.size >= 4)
 		ft_if_five(&stack);
+	else if (stack.size == 3)
+		ft_if_three(&stack);
+	else if (stack.size == 2)
+		sa(&stack);
 	ft_delete(&stack);
 	return (0);
 }
