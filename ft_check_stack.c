@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:10:16 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/17 09:27:22 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:20:40 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ int	ft_check_stack(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
+		if (argv[i][0] == '\0')
+			return (free(tab_i), -5);
 		nbr = ft_atoi(argv[i]);
 		if (nbr != ft_atoi_long(argv[i]))
 			return (free(tab_i), -4);
