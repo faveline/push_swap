@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:22:11 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/24 10:37:43 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:58:01 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,17 @@ void	rr(t_stack *stack);
 void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
+void	sa_b(t_stack *stack);
+void	sb_b(t_stack *stack);
+void	ss_b(t_stack *stack);
+void	pa_b(t_stack *stack);
+void	pb_b(t_stack *stack);
+void	ra_b(t_stack *stack);
+void	rb_b(t_stack *stack);
+void	rr_b(t_stack *stack);
+void	rra_b(t_stack *stack);
+void	rrb_b(t_stack *stack);
+void	rrr_b(t_stack *stack);
 int		ft_creat_stack(int size, char *argv[], t_stack *stack);
 int		ft_check_stack(int size, char *argv[]);
 void	ft_printf_a_b(t_stack *stack);

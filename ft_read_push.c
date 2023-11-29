@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 10:29:47 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/24 11:56:09 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:56:54 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,38 @@ static int	ft_checker_stack(t_stack *stack)
 	return (1);
 }
 
-static void	ft_read_on_stack(t_stack *stack, char *ope)
+static void	ft_if_error(void)
+{
+	ft_printf("ERROR");
+}
+
+static int	ft_read_on_stack(t_stack *stack, char *ope)
 {
 	if (ft_strncmp(ope, "sa\n", 3) == 0)
-		sa(stack);
+		sa_b(stack);
 	else if (ft_strncmp(ope, "sb\n", 3) == 0)
-		sb(stack);
+		sb_b(stack);
 	else if (ft_strncmp(ope, "ss\n", 3) == 0)
-		ss(stack);
+		ss_b(stack);
 	else if (ft_strncmp(ope, "pa\n", 3) == 0)
-		pa(stack);
+		pa_b(stack);
 	else if (ft_strncmp(ope, "pb\n", 3) == 0)
-		pb(stack);
+		pb_b(stack);
 	else if (ft_strncmp(ope, "ra\n", 3) == 0)
-		ra(stack);
+		ra_b(stack);
 	else if (ft_strncmp(ope, "rb\n", 3) == 0)
-		rb(stack);
+		rb_b(stack);
 	else if (ft_strncmp(ope, "rr\n", 3) == 0)
-		rr(stack);
+		rr_b(stack);
 	else if (ft_strncmp(ope, "rra\n", 4) == 0)
-		rra(stack);
+		rra_b(stack);
 	else if (ft_strncmp(ope, "rrb\n", 4) == 0)
-		rrb(stack);
+		rrb_b(stack);
 	else if (ft_strncmp(ope, "rrr\n", 4) == 0)
-		rrr(stack);
+		rrr_b(stack);
+	else
+		return (ft_if_error(), -1);
+	return (1);
 }
 
 void	ft_read_push(t_stack *stack)
@@ -64,7 +72,8 @@ void	ft_read_push(t_stack *stack)
 	next_line = get_next_line(0);
 	while (next_line)
 	{
-		ft_read_on_stack(stack, next_line);
+		if (ft_read_on_stack(stack, next_line) < 0)
+			return (free(next_line));
 		free(next_line);
 		next_line = get_next_line(0);
 	}

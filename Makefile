@@ -16,6 +16,9 @@ SRCS = ft_creat_stack.c			\
 	   main.c
 
 SRCS_CHECKER = ft_creat_stack.c			\
+			   ft_ope_swap_push_bonus.c	\
+			   ft_ope_reverse_bonus.c	\
+			   ft_ope_rotate_bonus.c	\
 			   ft_ope_swap_push.c		\
 			   ft_ope_reverse.c			\
 			   ft_ope_rotate.c			\

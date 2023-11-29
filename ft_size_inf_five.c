@@ -6,7 +6,7 @@
 /*   By: faveline <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:13:22 by faveline          #+#    #+#             */
-/*   Updated: 2023/11/24 09:55:04 by faveline         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:01:58 by faveline         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_if_five(t_stack *stack)
 	while (stack->size_a > 2)
 	{
 		i_min = ft_min(stack);
-		if (i_min <= 2)
+		if ((i_min <= 2 && stack->size_a >= 4) || i_min <= 1)
 		{
 			while (i_min > 0)
 			{
